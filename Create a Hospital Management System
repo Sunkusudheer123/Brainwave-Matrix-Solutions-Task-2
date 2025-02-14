@@ -1,0 +1,57 @@
+public class HospitalManagementSystem {
+    public static void main(String[] args) {
+        System.out.println("Hospital Management System Initialized");
+        
+        // Initialize modules
+        PatientRegistration patientRegistration = new PatientRegistration();
+        AppointmentScheduling appointmentScheduling = new AppointmentScheduling();
+        EHR ehr = new EHR();
+        Billing billing = new Billing();
+        InventoryManagement inventoryManagement = new InventoryManagement();
+        StaffManagement staffManagement = new StaffManagement();
+        
+        // Sample Usage
+        patientRegistration.registerPatient("John Doe", 30, "Male", "1234567890");
+        appointmentScheduling.scheduleAppointment("John Doe", "Dr. Smith", "2025-02-15");
+        ehr.addMedicalRecord("John Doe", "Diabetes", "Metformin");
+        billing.generateInvoice("John Doe", 500.00);
+        inventoryManagement.addItem("Aspirin", 100);
+        staffManagement.addStaff("Dr. Smith", "Cardiologist");
+    }
+}
+
+class PatientRegistration {
+    void registerPatient(String name, int age, String gender, String contact) {
+        System.out.println("Patient Registered: " + name);
+    }
+}
+
+class AppointmentScheduling {
+    void scheduleAppointment(String patientName, String doctorName, String date) {
+        System.out.println("Appointment Scheduled for " + patientName + " with " + doctorName + " on " + date);
+    }
+}
+
+class EHR {
+    void addMedicalRecord(String patientName, String diagnosis, String treatment) {
+        System.out.println("Medical Record Added: " + patientName + " - " + diagnosis + " - " + treatment);
+    }
+}
+
+class Billing {
+    void generateInvoice(String patientName, double amount) {
+        System.out.println("Invoice Generated for " + patientName + ": $" + amount);
+    }
+}
+
+class InventoryManagement {
+    void addItem(String itemName, int quantity) {
+        System.out.println("Item Added to Inventory: " + itemName + " - Quantity: " + quantity);
+    }
+}
+
+class StaffManagement {
+    void addStaff(String name, String role) {
+        System.out.println("Staff Added: " + name + " - " + role);
+    }
+}
